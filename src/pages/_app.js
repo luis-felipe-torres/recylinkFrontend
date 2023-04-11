@@ -1,5 +1,18 @@
-import '@/styles/globals.css'
+import { CssBaseline } from "@mui/material";
+import Navbar from "../components/Navbar";
+import "../styles/globals.css";
+import CustomApolloProvider from "../contexts/ApolloProvider";
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <CssBaseline />
+      <Navbar />
+      <CustomApolloProvider>
+        <Component {...pageProps} />
+      </CustomApolloProvider>
+    </>
+  );
 }
+
+export default MyApp;
