@@ -42,22 +42,18 @@ const ConfigPage = () => {
 
   const [updateModelo] = useMutation(UPDATE_MODELO, {
     update(cache, { data: { updateModelo } }) {
-      // Lee los datos actuales de la caché
       const { modelos } = cache.readQuery({ query: GET_MODELOS });
 
-      // Encuentra el índice del modelo que ha sido actualizado
       const index = modelos.findIndex(
         (modelo) => modelo.id === updateModelo.id
       );
 
-      // Reemplaza el modelo actualizado en la lista de modelos
       const updatedModelos = [
         ...modelos.slice(0, index),
         updateModelo,
         ...modelos.slice(index + 1),
       ];
 
-      // Escribe los datos actualizados en la caché
       cache.writeQuery({
         query: GET_MODELOS,
         data: { modelos: updatedModelos },

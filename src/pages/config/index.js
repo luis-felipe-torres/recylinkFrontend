@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Container } from "@mui/material";
 import ConfigPage from "@/components/ConfigPage";
+import { BackgroundImage } from "@/components/BackgroundImage";
 
 export default function Config() {
   return (
@@ -8,9 +9,11 @@ export default function Config() {
       <Head>
         <title>Configuración de marcas y modelos</title>
       </Head>
-      <Container maxWidth="lg">
-        <ConfigPage />
-      </Container>
+      <BackgroundImage>
+        <Container maxWidth="lg">
+          <ConfigPage />
+        </Container>
+      </BackgroundImage>
     </div>
   );
 }
