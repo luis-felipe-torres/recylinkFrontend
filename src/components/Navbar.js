@@ -32,7 +32,7 @@ export default function Navbar() {
 
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ zIndex: 1300 }}>
         <Toolbar>
           <Link href="/" passHref>
             <IconButton edge="start" color="inherit" aria-label="inicio">
